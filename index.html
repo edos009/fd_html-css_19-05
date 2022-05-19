@@ -10,26 +10,80 @@
   </head>
   <body>
     <form class="form" action="">
-      <label class="form-item">
-        <span class="form-text">Username or email address</span>
-        <input
-          class="form-input"
-          type="text"
-          name="username"
-          autofocus
-          required
-          pattern="^[A-Z][a-z0-9]{4,9}$"
-        />
-      </label>
-      <label class="form-item">
-        <span class="form-text">Password</span>
-        <input class="form-input" type="password" name="password" required />
-      </label>
-      <label class="form-item">
-        <span class="form-text">Email</span>
-        <input class="form-input" type="email" name="email" required />
-      </label>
-      <input class="form-input form-btn" type="submit" value="Sign in" />
+      <!-- Секция приватной информации -->
+      <fieldset>
+        <legend>Private Info</legend>
+        <label class="form-item">
+          <span class="form-text">Username or email address</span>
+          <!-- Инпут с атрибумами для автофокуса и с регулярным выражением для проверки -->
+          <input
+            class="form-input"
+            type="text"
+            name="username"
+            autofocus
+            required
+            pattern="^[A-Z][a-z0-9]{4,15}$"
+          />
+        </label>
+        <label class="form-item">
+          <span class="form-text">Password</span>
+          <input class="form-input" type="password" name="password" required />
+        </label>
+      </fieldset>
+
+      <!-- Секция выбора пола человека -->
+      <fieldset>
+        <legend>Sex</legend>
+        <label>
+          Female
+          <input type="radio" name="gander" value="0" />
+        </label>
+        <label>
+          Male
+          <input type="radio" name="gander" value="1" />
+        </label>
+      </fieldset>
+
+      <!-- Секция выбора языков -->
+      <fieldset>
+        <legend>Languages</legend>
+        <label>
+          Uk
+          <input type="checkbox" name="language" value="uk" />
+        </label>
+        <label>
+          En
+          <input type="checkbox" name="language" value="en" />
+        </label>
+        <label>
+          Pl
+          <input type="checkbox" name="language" value="pl" />
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Choose city</legend>
+        <label class="form-item">
+          <span class="form-text">Choose your city</span>
+          <datalist id="list-towns">
+            <option value="Запорожье">
+            <option value="Киев">
+            <option value="Кривой Рог">
+            <option value="Львов">
+            <option value="Луцк">
+            <option value="Харьков">
+            <option value="Херсон">
+            <option value="Хмельницк">
+          </datalist>
+          <input class="form-input" type="text" name="city" list="list-towns"/>
+        </label>
+      </fieldset>
+
+      <button class="form-input form-btn" type="submit">
+        <img class="send-icon" src="./assets/icons/send.svg" alt="" />
+        Sign in
+      </button>
+      <input class="form-input form-btn" type="reset" value="Reset" />
     </form>
   </body>
 </html>
