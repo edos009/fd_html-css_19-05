@@ -4,11 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Lesson 15 - HTML | CSS - Form</title>
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    Í
+    <form class="form" action="">
+      <label class="form-item">
+        <span class="form-text">Username or email address</span>
+        <input
+          class="form-input"
+          type="text"
+          name="username"
+          autofocus
+          required
+          pattern="^[A-Z][a-z0-9]{4,9}$"
+        />
+      </label>
+      <label class="form-item">
+        <span class="form-text">Password</span>
+        <input class="form-input" type="password" name="password" required />
+      </label>
+      <label class="form-item">
+        <span class="form-text">Email</span>
+        <input class="form-input" type="email" name="email" required />
+      </label>
+      <input class="form-input form-btn" type="submit" value="Sign in" />
+    </form>
   </body>
 </html>
